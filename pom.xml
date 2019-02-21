@@ -15,6 +15,7 @@
 		<module>multithreading/synchronizers/countDownLatch</module>
 		<module>multithreading/synchronizers/exchanger</module>
 		<module>multithreading/synchronizers/phaser</module>
+		<module>solid</module>
 
 	</modules>
 
