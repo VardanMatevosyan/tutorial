@@ -16,6 +16,7 @@
 		<module>multithreading/synchronizers/exchanger</module>
 		<module>multithreading/synchronizers/phaser</module>
 		<module>solid</module>
+		<module>algorithm</module>
 
 	</modules>
 
