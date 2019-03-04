@@ -10,7 +10,11 @@ public class Tree<V extends Comparable<V>> {
     Tree() {
     }
 
-    private class Entry<V> {
+    public Entry<V> getRoot() {
+        return root;
+    }
+
+    protected class Entry<V> {
         V value;
         Entry<V> left;
         Entry<V> right;
@@ -46,16 +50,16 @@ public class Tree<V extends Comparable<V>> {
     }
 
     public Optional<V> put(V value) {
-        Entry<V> parent = this.root;
+
         Optional<V> v = Optional.empty();
         Entry<V> p = null;
-        if (parent == null) {
+        if (this.root == null) {
             this.root = new Entry<>(value, null);
             this.size = 1;
             return Optional.empty();
         } else {
             int cmp = 0;
-
+            Entry<V> parent = this.root;
             Comparable<? super V> vCmp = value;
             if (vCmp != null) {
                 do {
