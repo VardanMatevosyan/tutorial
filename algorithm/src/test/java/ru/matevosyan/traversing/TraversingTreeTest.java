@@ -2,6 +2,9 @@ package ru.matevosyan.traversing;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.core.Is.is;
@@ -12,7 +15,7 @@ import static org.junit.Assert.*;
  */
 public class TraversingTreeTest {
 
-    /**
+    /** DepthFirstSearch
      *     TREE
      *     root
      *      1
@@ -45,6 +48,43 @@ public class TraversingTreeTest {
         dfs.inOrder();
         System.out.println("Post order DFS traversing");
         dfs.postOrder();
+
+        assertThat(actual, is(expected));
+
+    }
+
+    /**
+     * BreadthFirstSearch
+     *     TREE
+     *     root
+     *      1
+     *           3
+     *        2      5
+     *             4
+     *
+     *  Expected result
+     *  BFS traversing
+     *  1
+     *  3
+     *  2
+     *  5
+     *  4
+     */
+    @Test
+    public void whenUseBFSTraversingThenPrintTheResult() {
+        Tree<Integer> tree = new Tree<>();
+
+        tree.put(1);
+        tree.put(3);
+        tree.put(5);
+        tree.put(4);
+        tree.put(2);
+
+        BreadthFirstSearch<Integer> bfs = new BreadthFirstSearch<>(tree);
+        System.out.println("BFS traversing");
+        List<Integer> actual = bfs.search(4);
+        List<Integer> expected = Arrays.asList(1, 3, 2, 5, 4);
+        actual.forEach(System.out::println);
 
         assertThat(actual, is(expected));
 
