@@ -17,6 +17,7 @@
 		<module>multithreading/synchronizers/phaser</module>
 		<module>solid</module>
 		<module>algorithm</module>
+		<module>interview</module>
 
 	</modules>
 
