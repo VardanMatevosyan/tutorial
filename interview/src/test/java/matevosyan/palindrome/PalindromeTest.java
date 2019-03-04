@@ -1,7 +1,8 @@
 package matevosyan.palindrome;
 
 import org.junit.Test;
-import ru.matevosyan.polindrom.Palindrome;
+import ru.matevosyan.palindrome.Palindrome;
+
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
