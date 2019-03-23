@@ -65,40 +65,6 @@ public class TaskRepository {
             return query.executeUpdate();
         });
         return updated == 1;
-//        return TRANSACTION.use(session -> {
-//            Query query = session.createQuery("SELECT done FROM Task WHERE id=:id");
-//            query.setInteger("id", taskId);
-//            List<Task> queryList = (List<Task>) query.list();
-//            return queryList.get(0).getDone();
-//        });
     }
 
-//    /**
-//     * Change task done state in db.
-//     * @param taskId task id.
-//     * @return count of updated rows.
-//     */
-//    public boolean changeTaskState(Integer taskId) {
-//        Boolean doneFromDB = TRANSACTION.use(session -> {
-//            Query query = session.createQuery("SELECT done FROM Task WHERE id=:id");
-//            query.setInteger("id", taskId);
-//            List<Task> queryList = (List<Task>) query.list();
-//            return queryList.get(0).getDone();
-//        });
-//
-//        boolean change = !doneFromDB;
-//        TRANSACTION.use(session -> {
-//            Query query = session.createQuery("UPDATE Task set done=:done WHERE taskId=:id");
-//            query.setBoolean("done", change);
-//            query.setInteger("id", taskId);
-//            return query.executeUpdate();
-//        });
-//
-//        return TRANSACTION.use(session -> {
-//            Query query = session.createQuery("SELECT done FROM Task WHERE id=:id");
-//            query.setInteger("id", taskId);
-//            List<Task> queryList = (List<Task>) query.list();
-//            return queryList.get(0).getDone();
-//        });
-//    }
 }
