@@ -18,6 +18,7 @@
 		<module>solid</module>
 		<module>algorithm</module>
 		<module>interview</module>
+		<module>restfull</module>
 
 	</modules>
 
