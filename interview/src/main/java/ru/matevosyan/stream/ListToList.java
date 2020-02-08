@@ -1,5 +1,6 @@
 package ru.matevosyan.stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ListToList {
-    public List<Integer> convert(final List<String> strings) {
+    public List<Integer> convertStringLengthFromTheListToElementOfTheList(final List<String> strings) {
         return strings.stream().map(String::length).collect(Collectors.toList());
     }
 
@@ -24,11 +25,17 @@ public class ListToList {
         return collect;
     }
 
-    public static void main(String[] args) {
-        ListToList listToList = new ListToList();
-        List<Integer> convert = listToList.convert(Arrays.asList("a", "ab", "abc", "abcd"));
-        Integer integer = convert.get(0);
-        System.out.println("First value " + integer);
-        convert.forEach(System.out::println);
+    public List<Integer> convertListOfStringToListOfIntegersJava7(List<String> strings) {
+        List<Integer> numbers = new ArrayList<>();
+        for (String number : strings) {
+            int numberInt = Integer.parseInt(number);
+            numbers.add(numberInt);
+        }
+        return numbers;
     }
+
+    public List<Integer> convertListOfStringToListOfIntegersJava8(List<String> strings) {
+        return strings.stream().map(Integer::parseInt).collect(Collectors.toList());
+    }
+
 }
