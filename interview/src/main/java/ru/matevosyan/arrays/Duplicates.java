@@ -2,6 +2,13 @@ package ru.matevosyan.arrays;
 
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Duplicates {
 
@@ -33,13 +40,48 @@ public class Duplicates {
         return false;
     }
 
+    /**
+     * In Java 8 Stream, filter with Set.Add() is the fastest algorithm to find duplicate elements,
+     * because it loops only one time.
+     * @param numbers array og numbers.
+     * @return if the list contains duplicate.
+     */
+    public boolean hasDuplicateJava8V1(int[] numbers) {
+        Set<Integer> setOfTheNumbers = new HashSet<>();
+        return IntStream.of(numbers).filter(n -> !setOfTheNumbers.add(n)).findAny().isPresent();
+    }
+
+    /**
+     * In Java 8 Stream, filter with grouping to map is not bad to use but a little bit slower then using Set.
+     * @param numbers array og numbers.
+     * @return if the list contains duplicate.
+     */
+    public boolean hasDuplicateJava8V2(int[] numbers) {
+        return IntStream.of(numbers).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .anyMatch(m -> m.getValue() > 1);
+    }
+
+    /**
+     * The Collections.frequency is the slowest because it compares each item
+     * with a list – Collections.frequency(list, i).
+     * If we increase the size of the list, the performance will get slower.
+     * @param numbers array og numbers.
+     * @return if the list contains duplicate.
+     */
+    public boolean hasDuplicateJava8V3(int[] numbers) {
+        List<Integer> listOfNumbers = IntStream.of(numbers).boxed().collect(Collectors.toList());
+        return listOfNumbers.stream().anyMatch(n -> Collections.frequency(listOfNumbers, n) > 1);
+    }
+
     public static void main(String[] args) {
         Duplicates duplicates = new Duplicates();
-        int[] ints = {1, 2, 3, 4, 3};
-        boolean hasDuplicate = duplicates.hasDuplicate(ints);
-        System.out.println(String.format(" An array %s has duplicate ? %b",
+        int[] ints = {1, 2, 3, 4, 5};
+        boolean hasDuplicate = duplicates.hasDuplicateJava8V3(ints);
+        System.out.println(String.format(" An array %s has duplicate? %s",
                 Arrays.toString(ints),
-                hasDuplicate));
+                hasDuplicate ? " Yes" : "No"));
 
     }
 }
