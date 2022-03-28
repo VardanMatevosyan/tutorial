@@ -1,4 +1,4 @@
-verstion: 2.1
+version: 2.1
 
 filter_ignore_main_branches: &filter_ignore_main_branches
   filters:
