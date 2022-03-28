@@ -21,7 +21,7 @@ commands:
           name: "Running checkstyle"
           command: |
             cd ~/project
-            ./mvn checkstyle
+            ./mvnw checkstyle
   build-and-run-test:
     description: "Running test"
     steps:
