@@ -31,7 +31,7 @@ commands:
             TERM: dumb
           command: |
             cd ~/project
-            ./mvn test
+            ./mvnw test
 jobs:
   build:
     docker:
