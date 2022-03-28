@@ -14,7 +14,7 @@ executors:
       image: ubuntu-2004:202008-01
   openjdk:
     working_directory: ~/project
-    machine:
+    docker:
       image: cimg/openjdk:8.0.322
 
 commands:
