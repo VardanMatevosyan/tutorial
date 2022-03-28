@@ -22,7 +22,7 @@ commands:
           command: |
             cd ~/project
             chmod +x mvnw
-            ./mvnw checkstyle
+            ./mvnw validate
   build-and-run-test:
     description: "Running test"
     steps:
