@@ -9,8 +9,8 @@ import java.util.concurrent.Phaser;
  * Created by Admin on 16.11.2017.
  */
 public class ComputerBuilderTest {
-    Phaser phaser = new Phaser(3);
-    CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+    private final Phaser phaser = new Phaser(3);
+    private final CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
 
     @Test
     public void whenThan() {

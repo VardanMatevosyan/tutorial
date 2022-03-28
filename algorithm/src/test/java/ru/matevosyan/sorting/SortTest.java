@@ -1,11 +1,10 @@
 package ru.matevosyan.sorting;
 
 import org.junit.Test;
-
 import java.util.Arrays;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 public class SortTest {
 

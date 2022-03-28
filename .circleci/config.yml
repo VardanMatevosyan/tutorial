@@ -1,0 +1,56 @@
+version: 2.1
+
+filter_ignore_main_branches: &filter_ignore_main_branches
+  filters:
+    branches:
+      ignore:
+        - master
+        - prod
+
+executors:
+  machine-executors:
+    working_directory: ~/project
+    machine:
+      image: ubuntu-2004:202008-01
+
+commands:
+  checkstyle:
+    description: "Code style checking"
+    steps:
+      - run:
+          name: "Running checkstyle"
+          command: |
+            cd ~/project
+            chmod +x mvnw
+            ./mvnw validate
+  build-and-run-test:
+    description: "Running test"
+    steps:
+      - run:
+          name: "Running application test"
+          environment:
+            TERM: dumb
+          command: |
+            cd ~/project
+            chmod +x mvnw
+            ./mvnw test
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:8.0.322
+    steps:
+      - checkout
+      - checkstyle
+      - build-and-run-test
+#      - store_artifacts:
+#            path: algorithm/target/reports/tests/test
+
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          <<: *filter_ignore_main_branches
+
+

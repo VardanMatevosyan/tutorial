@@ -15,6 +15,7 @@ public class MiddleElement<V> {
      *
      * First method.
      * How to find the middle element through one looping.
+     * @param list list.
      * @return middle element.
      */
     public V getMiddleElement(LinkedList<V> list) {
@@ -31,6 +32,7 @@ public class MiddleElement<V> {
     /**
      * Second method.
      * How to find the middle element through one looping.
+     * @param list list.
      * @return middle element.
      */
     public V getMiddleElementBySlowAndFastPointers(LinkedList<V> list) {

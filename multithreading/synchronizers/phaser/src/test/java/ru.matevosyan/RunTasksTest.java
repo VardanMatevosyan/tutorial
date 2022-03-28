@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Created by Admin on 18.11.2017.
  */
 public class RunTasksTest {
-    RunTasks runTasks = new RunTasks();
+    private final RunTasks runTasks = new RunTasks();
     @Test
     public void whenThan() {
         CopyOnWriteArrayList<Runnable> list = new CopyOnWriteArrayList<>();

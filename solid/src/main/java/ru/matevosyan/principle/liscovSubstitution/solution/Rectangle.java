@@ -1,8 +1,8 @@
 package ru.matevosyan.principle.liscovSubstitution.solution;
 
 public class Rectangle extends Quadrilaterals {
-    protected int width;
-    protected int height;
+    private int width;
+    private int height;
 
     public Rectangle() {
     }

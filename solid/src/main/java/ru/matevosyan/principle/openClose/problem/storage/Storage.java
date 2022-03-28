@@ -1,7 +1,6 @@
 package ru.matevosyan.principle.openClose.problem.storage;
 
 import ru.matevosyan.principle.openClose.problem.emtity.Order;
-import ru.matevosyan.principle.singleResponsibility.solution.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;

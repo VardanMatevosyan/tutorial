@@ -9,7 +9,8 @@ import java.util.List;
 
 public class OrderRepository<T extends Order> {
 
-    public OrderRepository() {}
+    public OrderRepository() {
+    }
 
     public void save(Order order) {
         Storage.STORAGE.getStorage().add(order);

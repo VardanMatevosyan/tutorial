@@ -3,12 +3,18 @@ package ru.matevosyan;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 
 /**
  * FutureTaskExample class.
  * Created on 05.11.2017.
  * @author Matevosyan Vardan
+ * @param <T> type.
  * @version 1.0
  */
 

@@ -10,7 +10,7 @@ import java.util.concurrent.Semaphore;
  */
 
 public class HotelBathRoomSemaphoreExample {
-    protected Semaphore bathRoom;
+    private final Semaphore bathRoom;
 
     public HotelBathRoomSemaphoreExample(int bathRoomCount) {
         bathRoom = new Semaphore(bathRoomCount);

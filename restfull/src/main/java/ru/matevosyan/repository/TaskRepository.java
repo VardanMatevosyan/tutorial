@@ -1,15 +1,10 @@
 package ru.matevosyan.repository;
 
 import org.hibernate.Query;
-
 import ru.matevosyan.entity.Task;
 import ru.matevosyan.utils.SessionManager;
-import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**

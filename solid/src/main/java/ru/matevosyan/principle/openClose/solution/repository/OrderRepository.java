@@ -9,7 +9,8 @@ import java.util.List;
 
 public class OrderRepository<T extends Order> extends BaseRepository {
 
-    public OrderRepository() {}
+    public OrderRepository() {
+    }
 
     @Override
     public void save(Order order) {

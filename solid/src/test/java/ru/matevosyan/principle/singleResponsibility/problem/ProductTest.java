@@ -2,8 +2,6 @@ package ru.matevosyan.principle.singleResponsibility.problem;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ProductTest {
 
     @Test

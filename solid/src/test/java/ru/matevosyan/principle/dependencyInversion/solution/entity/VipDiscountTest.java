@@ -3,9 +3,6 @@ package ru.matevosyan.principle.dependencyInversion.solution.entity;
 import org.junit.Test;
 import ru.matevosyan.principle.dependencyInversion.solution.view.OrderView;
 
-
-import static org.junit.Assert.*;
-
 public class VipDiscountTest {
 
     @Test

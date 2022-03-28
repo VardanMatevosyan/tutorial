@@ -2,7 +2,13 @@ package ru.matevosyan;
 
 import org.junit.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 
 /**
  * Created by Admin on 10.11.2017.
@@ -19,12 +25,12 @@ public class FutureTaskExampleTest {
     private ExecutorService executor = Executors.newFixedThreadPool(2);
 
     @Test
-    public void WhenStartExecutorThanCheckOutPut() {
+    public void whenStartExecutorThanCheckOutPut() {
         //starting
         this.executor.execute(this.futureTask1);
         this.executor.execute(this.futureTask2);
 
-        while(true) {
+        while (true) {
             try {
                 if (futureTask1.isDone() && futureTask2.isDone()) {
                     System.out.println("Done");

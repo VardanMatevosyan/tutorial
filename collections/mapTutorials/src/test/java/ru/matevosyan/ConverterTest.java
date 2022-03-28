@@ -14,15 +14,15 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertTrue;
 
 public class ConverterTest {
-  private final static String ABC_KEY = "ABC";
-  private final static String DEF_KEY = "DEF";
-  private final static String ABC_VALUE_123 = "123";
-  private final static String ABC_VALUE_124 = "124";
-  private final static String ABC_VALUE_125 = "125";
-  private final static String DEF_VALUE_126 = "126";
-  private final static String DEF_VALUE_127 = "127";
-  private final static List<String> actual = Arrays.asList(ABC_VALUE_123, ABC_VALUE_124, ABC_VALUE_125);
-  private final static List<String> actual2 = Arrays.asList(DEF_VALUE_126, DEF_VALUE_127);
+  private static final String ABC_KEY = "ABC";
+  private static final String DEF_KEY = "DEF";
+  private static final String ABC_VALUE_123 = "123";
+  private static final String ABC_VALUE_124 = "124";
+  private static final String ABC_VALUE_125 = "125";
+  private static final String DEF_VALUE_126 = "126";
+  private static final String DEF_VALUE_127 = "127";
+  private static final List<String> FIRST_ACTUAL = Arrays.asList(ABC_VALUE_123, ABC_VALUE_124, ABC_VALUE_125);
+  private static final List<String> SECOND_ACTUAL = Arrays.asList(DEF_VALUE_126, DEF_VALUE_127);
   private final Converter converter = new Converter();
   private final List<Map<String, Object>> data = new ArrayList<>();
 
@@ -38,16 +38,10 @@ public class ConverterTest {
   @Test
   public void verifyTheDataFromTheListIsTheSameInTheMap() {
     Map<String, Set<String>> resultMap = converter.convertAndReturnMap(data);
-    verifyResults(actual, actual2, resultMap);
+    verifyResults(resultMap);
   }
 
-  @Test
-  public void verifyTheDataWithColumnsFromTheListIsTheSameInTheMap() {
-    Map<String, Set<String>> resultMap = converter.convertAndReturnMapWithColumnNames(data);
-    verifyResults(actual, actual2, resultMap);
-  }
-
-  private void verifyResults(List<String> actual, List<String> actual2, Map<String, Set<String>> resultMap) {
+  private void verifyResults(Map<String, Set<String>> resultMap) {
     resultMap.forEach((key, value) -> {
       System.out.println("Key - " + key + " | Value - " + value);
     });
@@ -57,8 +51,8 @@ public class ConverterTest {
               map.containsKey(key)).collect(Collectors.toList());
       mapStream.forEach(map -> {
         String value = (String) map.get(key);
-        assertTrue((actual.contains(value) && !actual2.contains(value)) ||
-                (!actual.contains(value) && actual2.contains(value)));
+        assertTrue((ConverterTest.FIRST_ACTUAL.contains(value) && !ConverterTest.SECOND_ACTUAL.contains(value))
+            || (!ConverterTest.FIRST_ACTUAL.contains(value) && ConverterTest.SECOND_ACTUAL.contains(value)));
       });
     });
   }
