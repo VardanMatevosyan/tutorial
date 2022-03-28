@@ -21,6 +21,7 @@ commands:
           name: "Running checkstyle"
           command: |
             cd ~/project
+            chmod +x mvnw
             ./mvnw checkstyle
   build-and-run-test:
     description: "Running test"
@@ -31,6 +32,7 @@ commands:
             TERM: dumb
           command: |
             cd ~/project
+            chmod +x mvnw
             ./mvnw test
 jobs:
   build:
