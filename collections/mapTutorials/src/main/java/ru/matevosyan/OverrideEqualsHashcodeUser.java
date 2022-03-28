@@ -32,11 +32,6 @@ public class OverrideEqualsHashcodeUser {
         this.name = name;
     }
 
-    /**
-
-     * Constructor.
-     */
-
     public OverrideEqualsHashcodeUser(String name, int children, Calendar birthday) {
         this.name = name;
         this.children = children;

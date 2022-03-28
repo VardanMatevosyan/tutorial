@@ -16,7 +16,7 @@ public class BreadthFirstSearch<V extends Comparable<V>> {
     public List<V> search(V value) {
         queue.addLast(this.parent);
 
-        while(queue.size() > 0) {
+        while (queue.size() > 0) {
             Tree.Entry entry = queue.pollFirst();
             values.add((V) entry.value);
             if (entry.left != null) {

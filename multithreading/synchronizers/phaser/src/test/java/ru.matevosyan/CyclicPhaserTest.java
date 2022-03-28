@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Created by Admin on 18.11.2017.
  */
 public class CyclicPhaserTest {
-    CyclicPhaser cyclicPhaser = new CyclicPhaser();
+    private final CyclicPhaser cyclicPhaser = new CyclicPhaser();
     @Test
     public void whenThan() {
         CopyOnWriteArrayList<Runnable> list = new CopyOnWriteArrayList<>();

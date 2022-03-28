@@ -1,21 +1,19 @@
 package ru.matevosyan.traversing;
 
 import org.junit.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 /**
  * Testing Depth First Search traversing.
  */
 public class TraversingTreeTest {
 
-    /** DepthFirstSearch
+    /** DepthFirstSearch.
      *     TREE
      *     root
      *      1
@@ -54,7 +52,7 @@ public class TraversingTreeTest {
     }
 
     /**
-     * BreadthFirstSearch
+     * BreadthFirstSearch.
      *     TREE
      *     root
      *      1

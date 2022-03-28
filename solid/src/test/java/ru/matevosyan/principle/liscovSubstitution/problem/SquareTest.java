@@ -2,17 +2,15 @@ package ru.matevosyan.principle.liscovSubstitution.problem;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class SquareTest {
 
-    public  Rectangle RectangleFactory() {
+    public  Rectangle rectangleFactory() {
         return new Square();
     }
 
     @Test
     public void whenDonotUseLSP() {
-        Rectangle r = RectangleFactory();
+        Rectangle r = rectangleFactory();
         r.setWidth(7);
         r.setHeight(3);
 

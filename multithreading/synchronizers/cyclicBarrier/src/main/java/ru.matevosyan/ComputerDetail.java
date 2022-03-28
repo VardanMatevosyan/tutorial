@@ -25,7 +25,7 @@ public class ComputerDetail extends Thread {
         try {
             System.out.println("Detail will be installed in " + this.detailId + " seconds");
             Thread.sleep(timeToInstallDetail);
-            System.out.println("Detail " + this.detailId +" is installed and waiting for other detail to install too ");
+            System.out.println("Detail " + this.detailId + " is installed and waiting for other detail to install too ");
             this.barrier.await();
             System.out.println("\n Testing...");
         } catch (InterruptedException e) {

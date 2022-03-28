@@ -1,13 +1,11 @@
 package ru.matevosyan.principle.dependencyInversion.problem.entity;
 
-import java.util.List;
-
 /**
  * Order class.
  */
 public class Order {
     private String name;
-    private Discount discount;
+    private final Discount discount;
 
     public Order(String name, Discount discount) {
         this.name = name;

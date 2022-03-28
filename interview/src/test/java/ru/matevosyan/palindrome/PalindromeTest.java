@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThat;
 public class PalindromeTest {
 
     @Test
-    public void when_Then() {
+    public void when_then() {
         Palindrome palindrome = new Palindrome();
         String sentences = "SOLOS";
         boolean actual = palindrome.check(sentences);

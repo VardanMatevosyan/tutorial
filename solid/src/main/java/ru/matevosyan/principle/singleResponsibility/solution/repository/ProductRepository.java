@@ -3,14 +3,15 @@ package ru.matevosyan.principle.singleResponsibility.solution.repository;
 import ru.matevosyan.principle.singleResponsibility.solution.entity.Product;
 import ru.matevosyan.principle.singleResponsibility.solution.storage.Storage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * ProductRepository is repository for Product.
+ * @param <T> Product.
  */
 public class ProductRepository<T extends Product> {
-    public ProductRepository() { }
+
+    public ProductRepository() {
+
+    }
 
     public void save(Product product) {
         Storage.STORAGE.getStorage().add(product);

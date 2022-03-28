@@ -11,6 +11,7 @@ public class ListCircleDetector<V> {
 
     /**
      * hasCircle check if linked list has cycle detection.
+     * @param root node.
      * @return true if has cycle.
      */
     public boolean hasCircle(Node<V> root) {

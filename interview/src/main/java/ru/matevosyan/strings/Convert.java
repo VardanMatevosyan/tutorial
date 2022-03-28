@@ -1,13 +1,11 @@
 package ru.matevosyan.strings;
 
-import java.util.Arrays;
-
 public class Convert {
     public String reverse(String str) {
         int len = str.length();
         char[] chars = new char[len];
         char[] array = str.toCharArray();
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {
             chars[i] = array[len - i - 1];
         }
         return String.valueOf(chars);

@@ -5,8 +5,6 @@ import ru.matevosyan.principle.singleResponsibility.solution.entity.Product;
 import ru.matevosyan.principle.singleResponsibility.solution.repository.ProductRepository;
 import ru.matevosyan.principle.singleResponsibility.solution.view.ProductView;
 
-import static org.junit.Assert.*;
-
 public class ProductTest {
 
     @Test

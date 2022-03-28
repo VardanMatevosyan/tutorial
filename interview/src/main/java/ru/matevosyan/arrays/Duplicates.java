@@ -26,6 +26,7 @@ public class Duplicates {
      * @param numbers array of numbers.
      * @return true if an array has duplicate.
      */
+    @SuppressWarnings("InnerAssignment")
     public boolean hasDuplicate(int[] numbers) {
         int maxSize = 1_429_012_400;
         BitSet bits = new BitSet(maxSize);

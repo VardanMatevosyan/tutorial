@@ -4,7 +4,7 @@ import java.util.Date;
 
 public interface Product {
     String getName();
-    String GetDepartment();
+    String getDepartment();
     double getPrice();
     String getColor();
     String getModel();

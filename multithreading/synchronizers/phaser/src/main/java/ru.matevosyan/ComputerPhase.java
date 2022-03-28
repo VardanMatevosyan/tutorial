@@ -22,10 +22,9 @@ public class ComputerPhase extends Thread {
             this.computerBuildPhase.arriveAndAwaitAdvance();
         }
 
-        try{
+        try {
             Thread.sleep(200);
-        }
-        catch(InterruptedException ex){
+        } catch (InterruptedException ex) {
             System.out.println(ex.getMessage());
         }
     }

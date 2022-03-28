@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OrderTest {
     @Test
-    public void WhenProblemIsInTheArchitecture() {
+    public void whenProblemIsInTheArchitecture() {
         List<Product> products = Arrays.asList(
                 new Product("coffee", 250, 1),
                 new Product("milk", 150, 2));

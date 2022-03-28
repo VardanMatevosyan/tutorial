@@ -1,7 +1,5 @@
 package ru.matevosyan.searching;
 
-import ru.matevosyan.sorting.Sortable;
-
 /**
  * Strategy executor for Searchable algorithm.
  * @param <T> Type.
@@ -17,6 +15,7 @@ public class Algorithm<T, E> {
     /**
      * Execute search method from Searchable object.
      * @param array an array.
+     * @param element element.
      * @return element from an array.
      */
     public E execute(T[] array, E element) {

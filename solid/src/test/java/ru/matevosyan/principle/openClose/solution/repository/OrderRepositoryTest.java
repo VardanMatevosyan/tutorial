@@ -3,13 +3,10 @@ package ru.matevosyan.principle.openClose.solution.repository;
 import org.junit.Test;
 import ru.matevosyan.principle.openClose.problem.emtity.Order;
 import ru.matevosyan.principle.openClose.problem.emtity.Product;
-import ru.matevosyan.principle.openClose.solution.repository.OrderRepository;
 import ru.matevosyan.principle.openClose.problem.view.OrderView;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * OrderRepositoryTest class.

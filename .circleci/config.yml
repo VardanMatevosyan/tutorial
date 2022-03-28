@@ -1,0 +1,57 @@
+verstion: 2.1
+
+filter_ignore_main_branches: &filter_ignore_main_branches
+  filter:
+    branches:
+      ignore:
+        - master
+        - prod
+
+executors:
+  machine-executors:
+    working_directory: ~/project
+    machine:
+      image: ubuntu-2004:202008-01
+  openjdk:
+    working_directory: ~/project
+    machine:
+      image: cimg/openjdk:8.0.322
+
+commands:
+  checkstyle:
+    description: "Code style checking"
+    steps:
+      - run:
+          name: "Running checkstyle"
+          command: |
+            cd ~/project
+            ./mvn checkstyle
+  build-and-run-test:
+    description: "Running test"
+    steps:
+      - run:
+          name: "Running application test"
+          environment:
+            TERM: dumb
+          command: |
+            cd ~/project
+            ./mvn test
+jobs:
+  build:
+    executors: openjdk
+    steps:
+      - checkout
+      - checkstyle
+      - build-and-run-test
+#      - store_artifacts:
+#            path: algorithm/target/reports/tests/test
+
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          <<: *filter_ignore_main_branches
+
+
