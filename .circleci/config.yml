@@ -12,10 +12,6 @@ executors:
     working_directory: ~/project
     machine:
       image: ubuntu-2004:202008-01
-  openjdk:
-    working_directory: ~/project
-    docker:
-      image: cimg/openjdk:8.0.322
 
 commands:
   checkstyle:
@@ -38,7 +34,8 @@ commands:
             ./mvn test
 jobs:
   build:
-    executors: openjdk
+    docker:
+      image: cimg/openjdk:8.0.322
     steps:
       - checkout
       - checkstyle
