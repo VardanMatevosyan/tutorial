@@ -42,6 +42,10 @@ jobs:
       - checkout
       - checkstyle
       - build-and-run-test
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 #      - store_artifacts:
 #            path: algorithm/target/reports/tests/test
 
