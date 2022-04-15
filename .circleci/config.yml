@@ -31,7 +31,7 @@ commands:
           environment:
             TERM: dumb
           command: |
-            cd ~/project
+            cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw package
 jobs:
