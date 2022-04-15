@@ -47,7 +47,7 @@ jobs:
           paths:
             - .
       - store_artifacts:
-          path: solid/target/solid-*.jar
+          path: solid/target/solid-1.0.jar
       - store_test_results:
           path: solid/target/surefire-reports/
 
