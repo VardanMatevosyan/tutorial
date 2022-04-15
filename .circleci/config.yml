@@ -47,7 +47,7 @@ jobs:
           paths:
             - .
       - store_test_results:
-            path: tutorial/algorithm/target/serefire-reports
+            path: tutorial/algorithm/target/surefire-reports
 
 
 workflows:
