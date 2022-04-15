@@ -33,7 +33,7 @@ commands:
           command: |
             cd ~/project
             chmod +x mvnw
-            ./mvnw test
+            ./mvnw package
 jobs:
   build:
     docker:
