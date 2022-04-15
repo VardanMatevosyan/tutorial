@@ -46,8 +46,8 @@ jobs:
           root: .
           paths:
             - .
-#      - store_artifacts:
-#            path: algorithm/target/reports/tests/test
+      - store_test_results:
+            path: tutorial/algorithm/target/serefire-reports
 
 
 workflows:
