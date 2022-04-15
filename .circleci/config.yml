@@ -12,7 +12,10 @@ executors:
     working_directory: ~/project
     machine:
       image: ubuntu-2004:202008-01
-
+steps:
+  - &checkout_code
+    checkout:
+      path: $CIRCLE_PROJECT_REPONAME
 commands:
   checkstyle:
     description: "Code style checking"
@@ -20,7 +23,7 @@ commands:
       - run:
           name: "Running checkstyle"
           command: |
-            cd ~/project
+            cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw validate
   build-and-run-test:
@@ -39,7 +42,7 @@ jobs:
     docker:
       - image: cimg/openjdk:8.0.322
     steps:
-      - checkout
+      - *checkout_code
       - checkstyle
       - build-and-run-test
       - persist_to_workspace:
@@ -47,9 +50,9 @@ jobs:
           paths:
             - .
       - store_artifacts:
-          path: solid/target/solid-1.0.jar
+          path: tutorial/solid/target/solid-1.0.jar
       - store_test_results:
-          path: solid/target/surefire-reports/
+          path: tutorial/solid/target/surefire-reports/
 
 
 workflows:
