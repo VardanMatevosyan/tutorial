@@ -12,10 +12,12 @@ executors:
     working_directory: ~/project
     machine:
       image: ubuntu-2004:202008-01
+
 steps:
   - &checkout_code
     checkout:
       path: $CIRCLE_PROJECT_REPONAME
+
 commands:
   checkstyle:
     description: "Code style checking"
