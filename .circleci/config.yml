@@ -46,6 +46,8 @@ jobs:
           root: .
           paths:
             - .
+      - store_artifacts:
+          path: solid/target/solid-*.jar
       - store_test_results:
           path: solid/target/surefire-reports/
 
