@@ -23,8 +23,8 @@ commands:
       - run:
           name: "Running checkstyle"
           command: |
-            cd ./$CIRCLE_PROJECT_REPONAME
-            chmod +x mvnw
+            cd ./$CIRCLE_PROJECT_REPONAME 
+            chmod +x mvnw 
             ./mvnw validate
   build-and-run-test:
     description: "Running test"
@@ -34,8 +34,8 @@ commands:
           environment:
             TERM: dumb
           command: |
-            cd ./$CIRCLE_PROJECT_REPONAME
-            chmod +x mvnw
+            cd ./$CIRCLE_PROJECT_REPONAME 
+            chmod +x mvnw 
             ./mvnw package
 jobs:
   build:
