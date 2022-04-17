@@ -25,8 +25,8 @@ commands:
       - run:
           name: "Running checkstyle"
           command: |
-            cd ./$CIRCLE_PROJECT_REPONAME 
-            chmod +x mvnw 
+            cd ./$CIRCLE_PROJECT_REPONAME
+            chmod +x mvnw
             ./mvnw validate
   build-and-run-test:
     description: "Running test"
@@ -36,8 +36,8 @@ commands:
           environment:
             TERM: dumb
           command: |
-            cd ./$CIRCLE_PROJECT_REPONAME 
-            chmod +x mvnw 
+            cd ./$CIRCLE_PROJECT_REPONAME
+            chmod +x mvnw
             ./mvnw package
 jobs:
   build:
@@ -53,9 +53,10 @@ jobs:
             - .
       - store_artifacts:
           path: tutorial/solid/target/solid-1.0.jar
+      - store_artifacts:
+          path: tutorial/algorithm/target/site/cobertura/
       - store_test_results:
           path: tutorial/solid/target/surefire-reports/
-
 
 workflows:
   version: 2
