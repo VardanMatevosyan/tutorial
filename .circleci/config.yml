@@ -39,6 +39,17 @@ commands:
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw package
+  verify-test-coverage:
+    description: "Running verify (test coverage)"
+    steps:
+      - run:
+          name: "Running application verify"
+          environment:
+            TERM: dumb
+          command: |
+            cd ./$CIRCLE_PROJECT_REPONAME
+            chmod +x mvnw
+            ./mvnw verify
 jobs:
   build:
     docker:
@@ -47,6 +58,7 @@ jobs:
       - *checkout_code
       - checkstyle
       - build-and-run-test
+      - verify-test-coverage
       - persist_to_workspace:
           root: .
           paths:
