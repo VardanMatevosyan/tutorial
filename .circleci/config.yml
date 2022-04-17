@@ -13,6 +13,11 @@ executors:
     machine:
       image: ubuntu-2004:202008-01
 
+steps:
+  - &checkout_code
+    checkout:
+      path: $CIRCLE_PROJECT_REPONAME
+
 commands:
   checkstyle:
     description: "Code style checking"
@@ -20,7 +25,7 @@ commands:
       - run:
           name: "Running checkstyle"
           command: |
-            cd ~/project
+            cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw validate
   build-and-run-test:
@@ -31,23 +36,25 @@ commands:
           environment:
             TERM: dumb
           command: |
-            cd ~/project
+            cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw test
+            ./mvnw package
 jobs:
   build:
     docker:
       - image: cimg/openjdk:8.0.322
     steps:
-      - checkout
+      - *checkout_code
       - checkstyle
       - build-and-run-test
       - persist_to_workspace:
           root: .
           paths:
             - .
+      - store_artifacts:
+          path: tutorial/solid/target/solid-1.0.jar
       - store_test_results:
-          path: tutorial/algorithm/target/surefire-reports
+          path: tutorial/solid/target/surefire-reports/
       - store_artifacts:
           path: tutorial/algorithm/target/site/cobertura
 
