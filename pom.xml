@@ -110,13 +110,13 @@
 				<version>2.7</version>
 				<configuration>
 					<check>
-						<branchRate>60</branchRate>
-						<lineRate>60</lineRate>
+						<branchRate>50</branchRate>
+						<lineRate>75</lineRate>
 						<haltOnFailure>true</haltOnFailure>
-						<totalBranchRate>60</totalBranchRate>
-						<totalLineRate>60</totalLineRate>
-						<packageLineRate>60</packageLineRate>
-						<packageBranchRate>60</packageBranchRate>
+						<totalBranchRate>75</totalBranchRate>
+						<totalLineRate>75</totalLineRate>
+						<packageLineRate>75</packageLineRate>
+						<packageBranchRate>75</packageBranchRate>
 					</check>
 					<formats>
 						<format>html</format>
