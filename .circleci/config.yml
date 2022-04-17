@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  coveralls: coveralls/coveralls@1.0.4
+
 filter_ignore_main_branches: &filter_ignore_main_branches
   filters:
     branches:
@@ -50,6 +53,8 @@ commands:
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw verify
+      - coveralls/upload:
+          path_to_lcov: ./tutorial/algorithm/target/site/cobertura/
 jobs:
   build:
     docker:
