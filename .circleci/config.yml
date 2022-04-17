@@ -57,8 +57,6 @@ jobs:
           path: tutorial/algorithm/target/site/cobertura/
       - store_test_results:
           path: tutorial/solid/target/surefire-reports/
-      - store_artifacts:
-          path: tutorial/algorithm/target/site/cobertura
 
 workflows:
   version: 2
