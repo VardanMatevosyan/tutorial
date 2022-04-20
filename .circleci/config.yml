@@ -28,7 +28,7 @@ commands:
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw validate
-  build-and-run-test:
+  build:
     description: "Running test"
     steps:
       - run:
@@ -38,8 +38,8 @@ commands:
           command: |
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw package
-  verify-test-coverage:
+            ./mvnw clean compile
+  test:
     description: "Running verify (test coverage)"
     steps:
       - run:
@@ -49,7 +49,7 @@ commands:
           command: |
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw verify
+            ./mvnw package jacoco:report coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN
 jobs:
   build:
     docker:
@@ -57,8 +57,8 @@ jobs:
     steps:
       - *checkout_code
       - checkstyle
-      - build-and-run-test
-      - verify-test-coverage
+      - build
+      - test
       - persist_to_workspace:
           root: .
           paths:
