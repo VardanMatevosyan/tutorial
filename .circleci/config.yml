@@ -28,17 +28,6 @@ commands:
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
             ./mvnw validate
-  build:
-    description: "Running test"
-    steps:
-      - run:
-          name: "Running application test"
-          environment:
-            TERM: dumb
-          command: |
-            cd ./$CIRCLE_PROJECT_REPONAME
-            chmod +x mvnw
-            ./mvnw test
   test:
     description: "Running verify (test coverage)"
     steps:
@@ -57,7 +46,6 @@ jobs:
     steps:
       - *checkout_code
       - checkstyle
-      - build
       - test
       - persist_to_workspace:
           root: .
