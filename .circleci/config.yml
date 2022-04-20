@@ -38,7 +38,7 @@ commands:
           command: |
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw verify jacoco:report coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN
+            ./mvnw test jacoco:report coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN
 jobs:
   build:
     docker:
