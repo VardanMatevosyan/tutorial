@@ -38,7 +38,7 @@ commands:
           command: |
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw clean test
+            ./mvnw test
   test:
     description: "Running verify (test coverage)"
     steps:
@@ -66,7 +66,7 @@ jobs:
       - store_artifacts:
           path: tutorial/solid/target/solid-1.0.jar
       - store_artifacts:
-          path: tutorial/algorithm/target/site/cobertura/
+          path: tutorial/algorithm/target/site/jacoco/
       - store_test_results:
           path: tutorial/solid/target/surefire-reports/
 
