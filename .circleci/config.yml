@@ -38,7 +38,7 @@ commands:
           command: |
             cd ./$CIRCLE_PROJECT_REPONAME
             chmod +x mvnw
-            ./mvnw clean compile
+            ./mvnw clean test
   test:
     description: "Running verify (test coverage)"
     steps:
