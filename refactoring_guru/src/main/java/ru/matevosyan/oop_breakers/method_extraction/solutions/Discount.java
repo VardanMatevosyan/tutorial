@@ -1,4 +1,4 @@
-package ru.matevosyan.oop_breakers.solutions;
+package ru.matevosyan.oop_breakers.method_extraction.solutions;
 
 public final class Discount {
 

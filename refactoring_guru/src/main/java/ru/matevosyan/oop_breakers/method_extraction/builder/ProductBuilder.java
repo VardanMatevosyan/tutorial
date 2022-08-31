@@ -1,6 +1,6 @@
-package ru.matevosyan.oop_breakers.builder;
+package ru.matevosyan.oop_breakers.method_extraction.builder;
 
-import ru.matevosyan.oop_breakers.domain.Product;
+import ru.matevosyan.oop_breakers.method_extraction.domain.Product;
 
 import java.util.HashSet;
 import java.util.Set;

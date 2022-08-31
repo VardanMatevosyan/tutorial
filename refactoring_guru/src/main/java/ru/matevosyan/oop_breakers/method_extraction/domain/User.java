@@ -1,4 +1,4 @@
-package ru.matevosyan.oop_breakers.domain;
+package ru.matevosyan.oop_breakers.method_extraction.domain;
 
 public class User {
 

@@ -2,10 +2,11 @@ package ru.matevosyan.oop_breakers.solutions;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ru.matevosyan.oop_breakers.builder.ProductBuilder;
-import ru.matevosyan.oop_breakers.builder.UserBuilder;
-import ru.matevosyan.oop_breakers.domain.Product;
-import ru.matevosyan.oop_breakers.domain.User;
+import ru.matevosyan.oop_breakers.method_extraction.builder.ProductBuilder;
+import ru.matevosyan.oop_breakers.method_extraction.builder.UserBuilder;
+import ru.matevosyan.oop_breakers.method_extraction.domain.Product;
+import ru.matevosyan.oop_breakers.method_extraction.domain.User;
+import ru.matevosyan.oop_breakers.method_extraction.solutions.SwitchCaseSecondSolution;
 
 import java.util.Set;
 

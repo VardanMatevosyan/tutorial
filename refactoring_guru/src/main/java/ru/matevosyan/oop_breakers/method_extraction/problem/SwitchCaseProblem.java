@@ -1,7 +1,7 @@
-package ru.matevosyan.oop_breakers.problem;
+package ru.matevosyan.oop_breakers.method_extraction.problem;
 
-import ru.matevosyan.oop_breakers.domain.Product;
-import ru.matevosyan.oop_breakers.domain.User;
+import ru.matevosyan.oop_breakers.method_extraction.domain.Product;
+import ru.matevosyan.oop_breakers.method_extraction.domain.User;
 
 import java.util.Set;
 

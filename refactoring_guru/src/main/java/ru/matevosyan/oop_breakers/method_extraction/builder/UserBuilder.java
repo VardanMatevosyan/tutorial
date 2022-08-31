@@ -1,6 +1,6 @@
-package ru.matevosyan.oop_breakers.builder;
+package ru.matevosyan.oop_breakers.method_extraction.builder;
 
-import ru.matevosyan.oop_breakers.domain.User;
+import ru.matevosyan.oop_breakers.method_extraction.domain.User;
 
 public class UserBuilder {
     private final User user = new User();
