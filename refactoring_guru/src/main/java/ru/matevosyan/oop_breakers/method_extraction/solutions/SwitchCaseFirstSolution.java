@@ -20,6 +20,7 @@ public class SwitchCaseFirstSolution {
             case "US": total *= 1; break;
             case "UA": total *= 2; break;
             case "CN": total *= 3; break;
+            default: throw new RuntimeException("No such country");
         }
         return total;
     }

@@ -1,7 +1,5 @@
 package ru.matevosyan.oop_breakers.method_extraction.domain;
 
-import java.math.BigInteger;
-
 public class Product {
     private Integer quantity;
     private Integer price;

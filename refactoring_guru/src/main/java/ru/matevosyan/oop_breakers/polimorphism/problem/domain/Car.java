@@ -1,8 +1,5 @@
 package ru.matevosyan.oop_breakers.polimorphism.problem.domain;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 public class Car {
     private String brand;
     private String type;
