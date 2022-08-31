@@ -3,7 +3,6 @@ package ru.matevosyan;
 import org.junit.Test;
 
 import java.util.Calendar;
-import java.util.Comparator;
 import java.util.GregorianCalendar;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -28,11 +27,8 @@ public class OverrideEqualsHashcodeUserTest {
         OverrideEqualsHashcodeUser fourth = new OverrideEqualsHashcodeUser("fourth", 4, c);
         OverrideEqualsHashcodeUser fifth = new OverrideEqualsHashcodeUser("fifth", 5, c);
 
-        NavigableMap<OverrideEqualsHashcodeUser, Object> map = new TreeMap<>(new Comparator<OverrideEqualsHashcodeUser>() {
-            @Override
-            public int compare(OverrideEqualsHashcodeUser o1, OverrideEqualsHashcodeUser o2) {
-                return o1.getName().hashCode() - o2.getName().hashCode();
-            }
+        NavigableMap<OverrideEqualsHashcodeUser, Object> map = new TreeMap<>((Comparator<ru.matevosyan.OverrideEqualsHashcodeUser>) (o1, o2) -> {
+            return o1.getName().compareTo(o2.getName());
         });
 
         System.out.println("============================Put and out===========================================");
