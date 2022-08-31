@@ -28,12 +28,7 @@ public class OverrideEqualsHashcodeUserTest {
         OverrideEqualsHashcodeUser fourth = new OverrideEqualsHashcodeUser("fourth", 4, c);
         OverrideEqualsHashcodeUser fifth = new OverrideEqualsHashcodeUser("fifth", 5, c);
 
-        NavigableMap<OverrideEqualsHashcodeUser, Object> map = new TreeMap<>(new Comparator<OverrideEqualsHashcodeUser>() {
-            @Override
-            public int compare(OverrideEqualsHashcodeUser o1, OverrideEqualsHashcodeUser o2) {
-                return o1.getName().hashCode() - o2.getName().hashCode();
-            }
-        });
+        NavigableMap<OverrideEqualsHashcodeUser, Object> map = new TreeMap<>(getComparator());
 
         System.out.println("============================Put and out===========================================");
         map.put(first, "User1");
@@ -62,5 +57,9 @@ public class OverrideEqualsHashcodeUserTest {
         System.out.println("================================tailMap for last not include====================");
         map = map.tailMap(fourth, false);
         System.out.println(map);
+    }
+
+    private static Comparator<OverrideEqualsHashcodeUser> getComparator() {
+        return (o1, o2) -> o1.getName().compareTo(o2.getName());
     }
 }
