@@ -24,13 +24,12 @@ public class SortTest {
     }
 
     private void sortBy(Sortable<Integer> sortable, Integer[] actual, Integer[] expected, String massage) {
-        Algorithm<Integer> algorithm = new Algorithm<>(sortable);
 
         System.out.println("Before " + massage + ": ");
         Arrays.asList(actual).forEach(integer -> System.out.print(integer + " "));
         System.out.println();
 
-        Integer[] result = algorithm.execute(actual);
+        Integer[] result = sortable.sort(actual);
 
         System.out.println("After " + massage + ": ");
         Arrays.asList(result).forEach(integer -> System.out.print(integer + " "));

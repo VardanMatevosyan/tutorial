@@ -3,7 +3,6 @@ package ru.matevosyan.searching;
 import java.util.Objects;
 
 public class BinarySearchRecursive implements Searchable<Integer, Integer> {
-    private Integer result = -1;
 
     @Override
     public Integer search(Integer[] array, Integer element) {
@@ -13,21 +12,22 @@ public class BinarySearchRecursive implements Searchable<Integer, Integer> {
     }
 
     private Integer binaryRecursive(Integer[] array, Integer element, int left, int right) {
+        Integer result = -1;
         int middle;
 
         if (left > right) {
-            return this.result;
+            return result;
         }
 
         middle = (left + right) / 2;
 
         if (Objects.equals(array[middle], element)) {
-            this.result =  array[middle];
+            result =  array[middle];
         } else if (array[middle] > element) {
             this.binaryRecursive(array, element, left, middle - 1);
         } else {
             this.binaryRecursive(array, element, middle + 1, right);
         }
-        return this.result;
+        return result;
     }
 }

@@ -3,7 +3,6 @@ package ru.matevosyan.searching;
 import java.util.Objects;
 
 public class BinarySearchIterative implements Searchable<Integer, Integer> {
-    private Integer result = -1;
 
     @Override
     public Integer search(Integer[] array, Integer element) {
@@ -11,20 +10,32 @@ public class BinarySearchIterative implements Searchable<Integer, Integer> {
     }
 
     private Integer binaryIterative(Integer[] array, Integer element) {
+        Integer result = -1;
         int left = 0;
-        int right = array.length - 1;
+        int right = decrementMiddle(array.length);
         int middle;
         while (left <= right) {
-            middle = left + ((right - left) / 2);
-
+            middle = getNewArrayMiddle(left, right);
             if (Objects.equals(array[middle], element)) {
                 return array[middle];
             } else if (array[middle] < element) {
-                left = middle + 1;
+                left = incrmentMiddle(middle);
             } else if (array[middle] > element) {
-                right = middle - 1;
+                right = decrementMiddle(middle);
             }
         }
-        return this.result;
+        return result;
+    }
+
+    private static int decrementMiddle(int middle) {
+        return middle - 1;
+    }
+
+    private static int incrmentMiddle(int middle) {
+        return middle + 1;
+    }
+
+    private static int getNewArrayMiddle(int left, int right) {
+        return left + ((right - left) / 2);
     }
 }
