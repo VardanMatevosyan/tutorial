@@ -1,7 +1,5 @@
 package ru.matevosyan.arrays;
 
-import java.util.Arrays;
-
 public class ArrayUtil {
 
 
@@ -29,19 +27,19 @@ public class ArrayUtil {
                 result[i++] = second[secondArrayIndex++];
             }
 
-	    if (firstArrayIndex == first.length) {
-            	while (secondArrayIndex < second.length) {
-            		result[i++] = second[secondArrayIndex++];
-                
-            	}
-	    }
-	    if (secondArrayIndex == second.length) {
-            	while (firstArrayIndex < first.length) {
-                	result[i++] = first[firstArrayIndex++];
-            	}
-	    }
+            if (firstArrayIndex == first.length) {
+                while (secondArrayIndex < second.length) {
+                    result[i++] = second[secondArrayIndex++];
 
-}
+                }
+            }
+            if (secondArrayIndex == second.length) {
+                while (firstArrayIndex < first.length) {
+                    result[i++] = first[firstArrayIndex++];
+                }
+            }
+
+        }
         return result;
     }
 
