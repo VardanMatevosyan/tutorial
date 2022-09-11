@@ -16,8 +16,7 @@ public class Product {
     private double discountFactor() {
         if (basePrice() > 1000) {
             return 0.95;
-        }
-        else {
+        } else {
             return 0.98;
         }
     }

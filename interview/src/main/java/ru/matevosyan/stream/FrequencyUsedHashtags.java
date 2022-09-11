@@ -1,7 +1,10 @@
 package ru.matevosyan.stream;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,11 +21,11 @@ public class FrequencyUsedHashtags {
     }
 
     public static List<String> getHashTags(List<String> twits) {
-        TreeMap<String, Long> hashTagsFrequency = getHashTagsFrequencyMap(twits);
-        return getSortedHashTagsByFreaquency(hashTagsFrequency);
+        Map<String, Long> hashTagsFrequency = getHashTagsFrequencyMap(twits);
+        return getSortedHashTagsByFrequency(hashTagsFrequency);
     }
 
-    private static List<String> getSortedHashTagsByFreaquency(TreeMap<String, Long> hashTagsFrequency) {
+    private static List<String> getSortedHashTagsByFrequency(Map<String, Long> hashTagsFrequency) {
         return hashTagsFrequency.entrySet()
                 .stream()
                 .sorted((o1, o2) -> o2.getValue().compareTo(o1.getValue()))
@@ -30,13 +33,12 @@ public class FrequencyUsedHashtags {
                 .collect(Collectors.toList());
     }
 
-    private static TreeMap<String, Long> getHashTagsFrequencyMap(List<String> twits) {
-        TreeMap<String, Long> collect1 = twits.stream()
+    private static Map<String, Long> getHashTagsFrequencyMap(List<String> twits) {
+        return twits.stream()
                 .map(twit -> twit.split(" "))
                 .flatMap(Stream::of)
                 .filter(s -> s.startsWith("#"))
                 .map(s -> s.replace("#", ""))
                 .collect(Collectors.groupingBy(Function.identity(), TreeMap::new, Collectors.counting()));
-        return collect1;
     }
 }
