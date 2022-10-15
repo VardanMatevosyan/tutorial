@@ -2,6 +2,7 @@ package ru.matevosyan.methods.fat_method.method_moving.solution;
 
 class AccountType {
     // ...
+    // ...
     public double overdraftCharge(Account account) {
         if (isPremium()) {
             double result = 10;
@@ -13,7 +14,7 @@ class AccountType {
             return account.getDaysOverdrawn() * 1.75;
         }
     }
-
+    // ...
     private boolean isPremium() {
         return false;
     }
