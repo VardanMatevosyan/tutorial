@@ -27,6 +27,8 @@ class Account {
 
     /**
      * Foreign method. Should be on Date class.
+     * @param arg date
+     * @return date
      */
     private static Date nextWeek(Date arg) {
         return new Date(arg.getYear(), arg.getMonth(), arg.getDate() + 7);

@@ -19,7 +19,7 @@ package ru.matevosyan.objects.array.problem;
 class Tournament {
     String[] row = new String[2];
 
-    public Tournament() {
+    Tournament() {
         row[0] = "Liverpool";
         row[1] = "15";
     }

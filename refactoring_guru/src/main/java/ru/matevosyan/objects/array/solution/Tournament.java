@@ -9,7 +9,7 @@ package ru.matevosyan.objects.array.solution;
 class Tournament {
     Performance row = new Performance();
 
-    public Tournament() {
+    Tournament() {
         row.setName("Liverpool");
         row.setScore("15");
     }

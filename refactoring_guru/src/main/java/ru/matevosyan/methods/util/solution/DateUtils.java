@@ -3,10 +3,10 @@ package ru.matevosyan.methods.util.solution;
 import java.util.Date;
 
 class DateUtils extends Date {
-    public DateUtils(String dateString) {
+    DateUtils(String dateString) {
         super(dateString);
     }
-    public DateUtils(Date arg) {
+    DateUtils(Date arg) {
         super(arg.getTime());
     }
     public Date nextWeek() {
