@@ -2,6 +2,7 @@ package ru.matevosyan.methods.problem;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.matevosyan.methods.method.problem.Salary;
 
 public class SalaryTest {
 

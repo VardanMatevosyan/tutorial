@@ -1,4 +1,4 @@
-package ru.matevosyan.methods.problem;
+package ru.matevosyan.methods.method.problem;
 
 public class SplitVariableProblem {
     private double primaryForce;

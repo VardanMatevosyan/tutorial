@@ -1,4 +1,4 @@
-package ru.matevosyan.methods.solution;
+package ru.matevosyan.methods.method.solution;
 
 public class Order {
     private double quantity;
