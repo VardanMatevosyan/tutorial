@@ -13,7 +13,7 @@ package ru.matevosyan.objects.arguments.case1.problem;
  * In this case we should not change the method signature, because we don't have ability to pass
  * the same object with the same interface from other classes.
  * ------------------------------------------------------------------------------------------
- * ode example is from refactoring guru course but with my changes.
+ * Code example is from refactoring guru course but with my changes.
  */
 class Room {
     // ...

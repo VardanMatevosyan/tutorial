@@ -4,7 +4,7 @@ public abstract class Car {
     private String brand;
     private String type;
 
-    abstract Integer calculateInsuranceRate();
+     public abstract Integer calculateInsuranceRate();
 
     public String getBrand() {
         return brand;
