@@ -28,6 +28,7 @@ public class BinarySearchRecursive implements Searchable<Integer, Integer> {
         } else {
             this.binaryRecursive(array, element, middle + 1, right);
         }
+
         return result;
     }
 }
