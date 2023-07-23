@@ -18,8 +18,8 @@
 		<module>solid</module>
 		<module>algorithm</module>
 		<module>interview</module>
-		<module>restfull</module>
 		<module>refactoring_guru</module>
+    <module>jdk/Java11</module>
 
 	</modules>
 
