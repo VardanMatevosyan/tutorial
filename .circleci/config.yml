@@ -53,7 +53,7 @@ commands:
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:8.0.322
+      - image: cimg/openjdk:11.0
     steps:
       - *checkout_code
       - checkstyle
