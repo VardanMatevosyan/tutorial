@@ -16,7 +16,7 @@ import ru.matevosyan.http.model.PhotoWrapper;
 
 public class Main {
 
-  private static String NASA_API_URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=14&api_key=rnLIAL5BaEIjBxYdlbh0jeoGAxwdUyeAAS1PtxWr";
+  private static final String NASA_API_URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=14&api_key=rnLIAL5BaEIjBxYdlbh0jeoGAxwdUyeAAS1PtxWr";
 
   public static void main(String[] args) {
 
