@@ -13,6 +13,6 @@
         <property name="connection.pool_size">10</property>
         <property name="current_session_context_class">thread</property>
 
-        <mapping resource="ru/matevosyan/entity/Task.hbm.xml"/>
+        <mapping resource="com/practice/entity/Task.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
