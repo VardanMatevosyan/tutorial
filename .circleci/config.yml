@@ -4,7 +4,7 @@ filter_ignore_main_branches: &filter_ignore_main_branches
   filters:
     branches:
       ignore:
-        - master
+#        - master added before for testing ignore branches template features
         - prod
 
 executors:
