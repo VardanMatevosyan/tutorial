@@ -1,4 +1,4 @@
-package com.practice.linkedList;
+package com.practice.collections.linkedList;
 
 import java.util.Iterator;
 import java.util.LinkedList;

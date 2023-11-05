@@ -1,4 +1,4 @@
-package com.practice.linkedList;
+package com.practice.collections.linkedList;
 
 
 public class ListCircleDetector<V> {

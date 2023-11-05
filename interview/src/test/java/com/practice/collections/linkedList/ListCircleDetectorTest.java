@@ -1,5 +1,6 @@
-package com.practice.linkedList;
+package com.practice.collections.linkedList;
 
+import com.practice.collections.linkedList.ListCircleDetector;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

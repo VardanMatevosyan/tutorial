@@ -1,4 +1,4 @@
-package com.practice.palindrome;
+package com.practice.strings;
 
 /**
  * Palindrome class.
@@ -31,4 +31,18 @@ public class Palindrome {
         }
         return true;
     }
+
+    public boolean isPalindrome(String sentence) {
+        if (sentence.isEmpty()) {
+            return false;
+        }
+        char[] chars = sentence.toCharArray();
+        for (int i = 0; i < sentence.length(); i++) {
+            if (chars[i] != chars[sentence.length() - i -1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

@@ -1,5 +1,6 @@
-package com.practice.linkedList;
+package com.practice.collections.linkedList;
 
+import com.practice.collections.linkedList.MiddleElement;
 import org.junit.Test;
 
 import java.util.LinkedList;
