@@ -6,6 +6,7 @@ import static java.util.Objects.nonNull;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class SimpleTreeSet<E extends Comparable<? super E>> implements Set<E> {
 
@@ -88,10 +89,6 @@ public class SimpleTreeSet<E extends Comparable<? super E>> implements Set<E> {
     }
   }
 
-  private void createRootEntry(E element) {
-    root = new Entry<>(element, null);
-  }
-
   @Override
   public boolean remove(Object element) {
     // todo implement later
@@ -109,7 +106,56 @@ public class SimpleTreeSet<E extends Comparable<? super E>> implements Set<E> {
     return null;
   }
 
+  @Override
+  public void computeInOrder(Consumer<E> consumer) {
+    Entry<E> parent = root;
+    inOrderTravers(parent, consumer);
+  }
+
+  private void inOrderTravers(Entry<E> parent, Consumer<E> consumer) {
+    if (isNull(parent)) {
+      return;
+    }
+    inOrderTravers(parent.left, consumer);
+    consumer.accept(parent.value);
+    inOrderTravers(parent.right, consumer);
+  }
+
+  private void createRootEntry(E element) {
+    root = new Entry<>(element, null);
+  }
+
   private Entry<E> getEntry(E element) {
+    Entry<E> parent = root;
+    int compared;
+
+    if (isNull(comparator)) {
+      do {
+        compared = element.compareTo(parent.value);
+
+        if (compared == 0) {
+          return parent;
+        } else if (compared < 0) {
+          parent = parent.left;
+        } else {
+          parent = parent.right;
+        }
+
+      } while (nonNull(parent));
+    } else {
+      do {
+        compared = comparator.compare(element, parent.value);
+
+        if (compared == 0) {
+          return parent;
+        } else if (compared < 0) {
+          parent = parent.left;
+        } else {
+          parent = parent.right;
+        }
+
+      } while (nonNull(parent));
+    }
     return null;
   }
 
