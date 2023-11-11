@@ -38,7 +38,7 @@ public class Palindrome {
         }
         char[] chars = sentence.toCharArray();
         for (int i = 0; i < sentence.length(); i++) {
-            if (chars[i] != chars[sentence.length() - i -1]) {
+            if (chars[i] != chars[sentence.length() - i - 1]) {
                 return false;
             }
         }

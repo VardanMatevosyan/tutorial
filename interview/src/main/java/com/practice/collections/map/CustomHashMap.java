@@ -8,7 +8,7 @@ import java.util.Objects;
 // TODO need to add TreeNode population when list of node >= 7
 public class CustomHashMap<K, V> implements Map<K, V> {
 
-  private Node<K,V>[] table;
+  private Node<K, V>[] table;
   private int size;
   private int threshold;
   private int loadFactor;
@@ -33,7 +33,7 @@ public class CustomHashMap<K, V> implements Map<K, V> {
       Node<K, V> node = table[index];
       V oldValue = node.value;
 
-      if (node.hash == hash && (Objects.equals(node.key, key)) ) {
+      if (node.hash == hash && (Objects.equals(node.key, key))) {
         node.value = value;
       } else {
         while (nonNull(node.next)) {

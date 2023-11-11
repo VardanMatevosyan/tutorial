@@ -35,11 +35,12 @@ public class SimpleTreeSetTest {
   }
 
   /**
-  *         5
-  *       /  \
-  *      4    10
-  *       \
-  *        30
+   * Tree structure used in the test.
+   *         5
+   *       /  \
+   *      4    10
+   *       \
+   *        30
   **/
   @Test
   public void test_computeInOrder_shouldAcceptConsumerAndFillTheListWithInOrderData() {

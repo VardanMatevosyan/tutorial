@@ -52,7 +52,7 @@ public class SimpleLinkedList<T> implements List<T> {
 
     if (index > 0) {
       Node<T> previousNode = head;
-      for (int i = 0; i < index -1; i++) {
+      for (int i = 0; i < index - 1; i++) {
         previousNode = previousNode.next;
       }
       node.next = previousNode.next;
@@ -112,7 +112,7 @@ public class SimpleLinkedList<T> implements List<T> {
 
     if (index > 0) {
       Node<T> previousNode = head;
-      for (int i = 0; i < index -1; i++) {
+      for (int i = 0; i < index - 1; i++) {
         previousNode = previousNode.next;
       }
 
@@ -246,7 +246,7 @@ public class SimpleLinkedList<T> implements List<T> {
     T value;
     Node<T> next;
 
-    public Node(T value) {
+    Node(T value) {
       this.value = value;
     }
   }

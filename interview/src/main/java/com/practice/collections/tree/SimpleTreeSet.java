@@ -167,7 +167,7 @@ public class SimpleTreeSet<E extends Comparable<? super E>> implements Set<E> {
     Entry<E> right;
     Entry<E> parent;
 
-    public Entry(E value, Entry<E> parent) {
+    Entry(E value, Entry<E> parent) {
       this.value = value;
       this.parent = parent;
     }
@@ -179,7 +179,7 @@ public class SimpleTreeSet<E extends Comparable<? super E>> implements Set<E> {
       return false;
     }
 
-    public int hashcode() {
+    public int hashCode() {
       return this.value == null ? 0 : value.hashCode();
     }
 

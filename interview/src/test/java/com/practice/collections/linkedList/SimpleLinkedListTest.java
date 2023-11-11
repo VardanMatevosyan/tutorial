@@ -4,8 +4,6 @@ package com.practice.collections.linkedList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-import com.practice.collections.linkedList.List;
-import com.practice.collections.linkedList.SimpleLinkedList;
 import org.junit.Test;
 
 public class SimpleLinkedListTest {

@@ -1,12 +1,10 @@
 package com.practice.collections.linkedList;
 
-import com.practice.collections.linkedList.MiddleElement;
-import org.junit.Test;
-
-import java.util.LinkedList;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+
+import java.util.LinkedList;
+import org.junit.Test;
 
 public class MiddleElementTest {
 
