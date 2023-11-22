@@ -10,5 +10,5 @@ public interface Sortable<T> {
      * @param array an array to sort.
      * @return sorted array.
      */
-    Integer[] sort(T[] array);
+    T[] sort(T[] array);
 }
