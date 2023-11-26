@@ -76,6 +76,19 @@ public class Duplicates {
         return listOfNumbers.stream().anyMatch(n -> Collections.frequency(listOfNumbers, n) > 1);
     }
 
+    /**
+     * Not fastest, but just another one.
+     * @param numbers an array of ints.
+     * @return if an array has duplicates
+     */
+    public boolean hasDuplicateJava8V4(int[] numbers) {
+        Set<Integer> uniqueNumbers = Arrays
+            .stream(numbers)
+            .boxed()
+            .collect(Collectors.toSet());
+        return uniqueNumbers.size() != numbers.length;
+    }
+
     public static void main(String[] args) {
         Duplicates duplicates = new Duplicates();
         int[] ints = {1, 2, 3, 4, 5};
@@ -83,6 +96,5 @@ public class Duplicates {
         System.out.println(String.format(" An array %s has duplicate? %s",
                 Arrays.toString(ints),
                 hasDuplicate ? " Yes" : "No"));
-
     }
 }
