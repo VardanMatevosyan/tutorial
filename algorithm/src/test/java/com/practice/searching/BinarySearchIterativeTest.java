@@ -5,9 +5,10 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class SearchTest {
+public class BinarySearchIterativeTest {
+
     @Test
-    public void whenPassBinaryArrayAndElementToSearchThenGetElementYouAreSearchingFor() {
+    public void when_iterativeElementSearch_thenGetCorrectElement() {
         Integer expected = 6;
         Searchable<Integer, Integer> searchable = new BinarySearchIterative();
 
@@ -15,4 +16,5 @@ public class SearchTest {
 
         assertThat(actual, is(expected));
     }
+
 }
