@@ -1,7 +1,7 @@
 package com.practice.oop.static_dynamic_binding;
 
 /**
- * Example of static and dynamic binding in Java
+ * Example of static and dynamic binding in Java.
  */
 public class Demo {
 
