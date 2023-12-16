@@ -1,7 +1,7 @@
 package com.practice.sliding_window;
 
 /**
- * Best Time to Buy And Sell Stock
+ * Best Time to Buy And Sell Stock.
  */
 class BestTimeToBuyAndSellStock {
 

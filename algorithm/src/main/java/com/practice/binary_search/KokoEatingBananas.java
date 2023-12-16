@@ -15,7 +15,7 @@ class KokoEatingBananas {
     int left = 1;
     int right = Integer.MAX_VALUE;
 
-    while(left <= right) {
+    while (left <= right) {
       int mid = left + (right - left) / 2;
       int time = 0;
 
