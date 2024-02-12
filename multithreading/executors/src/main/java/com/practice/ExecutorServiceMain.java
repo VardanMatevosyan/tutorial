@@ -20,7 +20,7 @@ public class ExecutorServiceMain {
 
   private static void testSubmitRunnable() {
     System.out.println("Starting to run Runnable tasks");
-    ExecutorService executorService = Executors.newFixedThreadPool(2);;
+    ExecutorService executorService = Executors.newFixedThreadPool(2);
     executorService.submit(newRunnable("1-runnable"));
     executorService.submit(newRunnable("2-runnable"));
     executorService.submit(newCallable("3-callable in Submit method will be executed by one of the 2 threads in the pool"));
@@ -46,7 +46,7 @@ public class ExecutorServiceMain {
 
   private static void testInvokeAllCallable() {
     System.out.println("Starting to run Callable tasks");
-    ExecutorService executorService = Executors.newFixedThreadPool(2);;
+    ExecutorService executorService = Executors.newFixedThreadPool(2);
     List<Callable<String>> callables = List.of(newCallable("1-callable"), newCallable("2-callable"));
 
     try {
