@@ -20,8 +20,9 @@
 		<module>interview</module>
 		<module>refactoring_guru</module>
     <module>jdk/Java11</module>
+    <module>multithreading/core</module>
 
-	</modules>
+  </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
