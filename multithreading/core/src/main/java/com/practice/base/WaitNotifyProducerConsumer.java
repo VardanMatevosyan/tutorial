@@ -88,7 +88,7 @@ public class WaitNotifyProducerConsumer {
 
     @Override
     public void run() {
-      System.out.println("consumer" + Thread.currentThread().getName() +" Step in to ");
+      System.out.println("consumer" + Thread.currentThread().getName() + " Step in to ");
       synchronized (list) {
         while (list.isEmpty()) {
           try {
