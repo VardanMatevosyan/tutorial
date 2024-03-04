@@ -5,6 +5,8 @@ import java.util.concurrent.CompletableFuture;
 
 public class Main {
 
+  private static final LoggingServiceImpl loggingService = new LoggingServiceImpl();
+
   public static void main(String[] args) {
 
     CompletableFuture<Void> cf1 = CompletableFuture.runAsync(runnableLogging());
@@ -27,7 +29,6 @@ public class Main {
   }
 
   private static void serviceBusinesslikeLogging() {
-    LoggingServiceImpl loggingService = new LoggingServiceImpl();
     loggingService.log();
   }
 
