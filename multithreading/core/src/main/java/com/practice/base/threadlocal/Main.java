@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class Main {
 
-  private static final LoggingServiceImpl loggingService = new LoggingServiceImpl();
+  private static final LoggingServiceImpl LOGGING_SERVICE = new LoggingServiceImpl();
 
   public static void main(String[] args) {
 
@@ -29,7 +29,7 @@ public class Main {
   }
 
   private static void serviceBusinesslikeLogging() {
-    loggingService.log();
+    LOGGING_SERVICE.log();
   }
 
 }
