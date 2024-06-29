@@ -201,7 +201,9 @@ FROM profile AS p
 WHERE p.nick_name LIKE 'New%';
 
 
--- For the VACUUM command need to increse shared size, by default it's 64Mb
+
+
+-- For the VACUUM command, we need to increase the shared size, by default it's 64Mb
 -- docker run -itd --shm-size=1g postgres
 
 -- or in docker-compose:
