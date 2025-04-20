@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.v1;
 
 /**
  * HotelVisitor class for using SEMAPHORE HotelBathRoomSemaphoreExample for running in multiply threads.

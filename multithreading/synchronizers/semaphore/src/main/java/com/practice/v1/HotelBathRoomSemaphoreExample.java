@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.v1;
 
 import java.util.concurrent.Semaphore;
 
