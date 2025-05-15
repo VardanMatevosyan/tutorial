@@ -54,7 +54,7 @@ public class MapPractice2 {
 
   private static Map<String, Integer> convertToMapStreamBetter(List<String> strings) {
     return strings
-            .stream()
-            .collect(groupingBy(s -> s, summingInt(s -> 1)));
+        .stream()
+        .collect(groupingBy(s -> s, summingInt(s -> 1)));
   }
 }
