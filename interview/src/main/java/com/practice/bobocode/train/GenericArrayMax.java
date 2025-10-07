@@ -6,7 +6,6 @@ import static java.util.Comparator.comparing;
 import static java.util.Objects.isNull;
 
 import java.util.Comparator;
-import java.util.OptionalInt;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
