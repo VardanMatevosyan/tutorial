@@ -17,10 +17,12 @@ public class Main {
 
     System.out.println("An array from list - " + Arrays.toString(arrayFromList));
     System.out.println("An array from set - " + Arrays.toString(arrayFromSet));
+
+    compareTwoSets();
   }
 
 
-  public void compareTwoSets() {
+  private static void compareTwoSets() {
     List<String> list = List.of("first", "second", "3");
     Set<String> set = Set.of("first", "second", "3");
     Set<String> hashSet = new HashSet<>();
@@ -47,7 +49,9 @@ public class Main {
 
     // Resume
     // All the hashcodes are the same for the same value, but Set.of() and new HashSet()
-    // have different algorithm to determine the index of the bucket to store the value.
+    // Set.of() array size if doubles its size by the length of the provided elements
+    // new HashSet() has default size of 16, so if you add more than 16 elements,
+    // that is why the bucket index number is different from the one from the HashSet
     // The result of the output:
     //    list -  value is first hashcode is 97440432
     //    set -  value is first hashcode is 97440432

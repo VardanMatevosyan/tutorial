@@ -4,27 +4,31 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BreadthFirstSearch<V extends Comparable<V>> {
-    private final ArrayDeque<Tree.Entry> queue = new ArrayDeque<>();;
-    private final List<V> values = new ArrayList<>();
-    private final Tree.Entry parent;
+import static java.util.Objects.nonNull;
 
-    public BreadthFirstSearch(final Tree tree) {
+public class BreadthFirstSearch<V extends Comparable<V>> {
+    private final ArrayDeque<Tree.Entry<V>> queue = new ArrayDeque<>();;
+    private final List<V> values = new ArrayList<>();
+    private final Tree.Entry<V> parent;
+
+    public BreadthFirstSearch(final Tree<V> tree) {
         this.parent = tree.getRoot();
     }
 
-    public List<V> search(V value) {
+    public List<V> traverse() {
         queue.addLast(this.parent);
 
-        while (queue.size() > 0) {
-            Tree.Entry entry = queue.pollFirst();
-            values.add((V) entry.value);
-            if (entry.left != null) {
+        while (!queue.isEmpty()) {
+            Tree.Entry<V> entry = queue.pollFirst();
+            values.add(entry.value);
+
+            if (nonNull(entry.left)) {
                 this.queue.addLast(entry.left);
             }
-            if (entry.right != null) {
+            if (nonNull(entry.right)) {
                 this.queue.addLast(entry.right);
             }
+
         }
         return values;
     }
