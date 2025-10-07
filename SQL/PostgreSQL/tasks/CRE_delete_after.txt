@@ -1,0 +1,58 @@
+Пример: сотрудники и отделы
+
+Таблица departments:
+
+id	name	parent_id
+1	Company	NULL
+2	HR	1
+3	IT	1
+4	Dev	3
+5	QA	3
+
+Цель: получить все подразделения начиная с корневого Company и их уровни вложенности.
+
+3️⃣ SQL с рекурсией
+WITH RECURSIVE dept_hierarchy AS (
+    -- Базовый случай: корневой отдел
+    SELECT
+        id,
+        name,
+        parent_id,
+        1 AS level
+    FROM departments
+    WHERE parent_id IS NULL
+
+    UNION ALL
+
+    -- Рекурсивный случай: дочерние отделы
+    SELECT
+        d.id,
+        d.name,
+        d.parent_id,
+        dh.level + 1
+    FROM departments d
+    INNER JOIN dept_hierarchy dh ON d.parent_id = dh.id
+)
+SELECT *
+FROM dept_hierarchy
+ORDER BY level, parent_id;
+
+4️⃣ Пояснение
+
+WITH RECURSIVE dept_hierarchy AS (...) — создаёт рекурсивный CTE.
+
+Базовый запрос выбирает корень и присваивает level = 1.
+
+Рекурсивная часть соединяет дочерние отделы с родительским уровнем level + 1.
+
+UNION ALL объединяет базовый и рекурсивный результат.
+
+В результате получаем все отделы с указанием их уровня в иерархии.
+
+5️⃣ Применение
+
+Построение иерархий (отделы, категории, папки).
+
+Подсчёт суммарных показателей по всем подчинённым элементам.
+
+Поиск цепочек зависимостей (например, менеджер → подчинённый).

@@ -1,0 +1,17 @@
+Takeaways:
+1. HAVING is applied after GROUP BY, when the data is already aggregated.
+2. Window functions cannot be used inside HAVING.
+3. Use WHERE for filtering rows before aggregation and HAVING for filtering after aggregation.
+4. Aggregate functions like COUNT, SUM, AVG, MAX, MIN cannot be used in WHERE clause,
+   because WHERE filters rows before grouping/aggregation happens, only in SELECT, HAVING, ORDER BY.
+5. HAVING can be used without GROUP BY to filter on aggregate functions applied to the entire result set.
+6. ROW_NUMBER() gives a strict position (1, 2, 3, …), even if column values are equals. Works like incremental counter.
+7. DENSE_RANK() assigns the same rank to equal column values and does not skip numbers.
+8. OVER() clause defines the window for window functions.
+9. OVER() can make the aggregation functions work as window functions.
+10. PARTITION BY in OVER() divides the result set into partitions to which the window function is applied.
+11. ORDER BY in OVER() defines the order of rows within each partition if defined for window functions.
+12. CTE (Common Table Expression) is defined using WITH clause. It can be recursive or non-recursive.
+    Used to organize complex queries, improve readability, and reuse query logic.
+    The CTE is executed once and its result can be referenced multiple times in the main query.
+    CTE returns a temporary result set that exists only during the execution of the query.
