@@ -23,7 +23,7 @@
     <module>multithreading/core</module>
 		<module>patterns</module>
 
-	</modules>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
