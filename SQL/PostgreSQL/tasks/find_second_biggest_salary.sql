@@ -6,7 +6,7 @@
 -- +----+-------+--------+---------------+
 -- | 1  | Ivan  | 1000.1234 | 1           |
 -- | 2  | Anna  | 1500.1234 | 1           |
--- | 3  | Oleg  | 2000.1234 | 2           |
+-- | 3  | Oleg  | 2200.1234 | 2           |
 -- | 4  | Maria | 2200.1234 | 2           |
 -- | 5  | David | 2000.5678 | 2           |
 -- +----+-------+--------+---------------+
@@ -15,12 +15,14 @@
 
 -------------------------------------------------------------------------------------
 -- ======================================================================================
--- Method           | No Index   | ASC Index | DESC Index | Best Use
--- -----------------|------------|-----------|------------|------------------------------
--- MAX()+Subquery   | O(N)       | O(log N)  | O(log N)   | Simple, top-1/2 only
--- ORDER BY+OFFSET  | O(N log N) | Faster    | Very fast  | General top-N
--- DENSE_RANK()     | O(N log N) | Faster    | Very fast  | Top-N with ties
+-- Method                          | No Index     | With Index (ASC/DESC)       | Best For
+-- -------------------------------|--------------|-----------------------------|------------------------------
+-- MAX() + Subquery               | O(N)         | O(log N + c)                   | 2nd highest (distinct), NULL-safe
+-- DISTINCT + ORDER BY + OFFSET   | O(N log N)   | O(k log N) or O(N)         | Top-N distinct (if skip scan available)
+-- DENSE_RANK() OVER (...)        | O(N log N)   | O(N log N) (slight constant improvement) | Flexible ranking with ties
 -- ======================================================================================
+-- O(log N + c), c = small constant (rows examined after max)
+-- For option with DISTINCT only in MySQL 8.0+, PG 13+ with skip/loose index scan; otherwise O(N)
 
 -- Example 1:
 -- Using MAX() aggregation function and Sub-Query
@@ -32,9 +34,9 @@ WHERE salary < (SELECT MAX(salary) from employee);
 -------------------------------------------------------------------------------------
 
 -- Example 2:
--- Using ORDER BY + OFFSET
+-- Using  DISTINCT + ORDER BY + OFFSET
 -- With index the best to use it with DESC index.
-SELECT salary FROM employee
+SELECT DISTINCT salary FROM employee
 ORDER BY salary DESC
 OFFSET 1
 LIMIT 1;
